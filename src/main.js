@@ -10,8 +10,9 @@ import App from "./App.vue";
 
 // Vue.component(Button.name, Button);
 
-// css的样式
+// 导入mui的样式
 import "./lib/mui/css/mui.css";
+import "./lib/mui/css/icons-extra.css";
 
 //--------下面是项目-----------------------------------------------
 
