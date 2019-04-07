@@ -11,7 +11,8 @@ var router = new VueRouter({
     { path: "/home", component: HomeContainer },
     { path: "/member", component: MemberContainer },
     { path: "/shopcar", component: SearchContainer },
-    { path: "/search", component: ShopContainer }
+    { path: "/search", component: ShopContainer },
+    { path: "/", redirect: "/home" }
   ],
   linkActiveClass: "mui-active" //覆盖默认的路由高亮类，默认的类叫router-link-active
 });
