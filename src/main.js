@@ -14,15 +14,26 @@ import App from "./App.vue";
 import "./lib/mui/css/mui.css";
 import "./lib/mui/css/icons-extra.css";
 
+//配置路由
+import VueRouter from "vue-router";
+Vue.use(VueRouter);
+import router from "./router.js";
+
 //--------下面是项目-----------------------------------------------
-
+//头部
 import { Header } from "mint-ui";
-
 Vue.component(Header.name, Header);
+//轮播图
+import { Swipe, SwipeItem } from "mint-ui";
+Vue.component(Swipe.name, Swipe);
+Vue.component(SwipeItem.name, SwipeItem);
 
+//实例
 const vm = new Vue({
   el: "#app",
   render: function(createElement) {
     return createElement(App);
-  }
+    
+  },
+  router
 });
