@@ -20,12 +20,20 @@ import App from './App.vue'
 //导入vue-resource
 import VueResource from 'vue-resource'
 Vue.use(VueResource)
-
-import { Header } from 'mint-ui';
+//配置一个api请求的url地址
+//防火墙
+Vue.http.options.root = 'http://192.168.18.57:3005/'
+//不好 缓存
+// const express = require('express')
+// const express = require('express')
+// const express = require('express')
+import { Header, Swipe, SwipeItem, Button} from 'mint-ui';
 Vue.component(Header.name, Header);
-import { Swipe, SwipeItem } from 'mint-ui';
+// import { Swipe, SwipeItem } from 'mint-ui';
 Vue.component(Swipe.name, Swipe);
 Vue.component(SwipeItem.name, SwipeItem);
+// import {Button} from 'mint-ui'
+Vue.component(Button.name,Button)
 
 //导入mui样式
 import './lib/mui/css/mui.css'
@@ -35,6 +43,15 @@ import './lib/mui/css/icons-extra.css'
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 import router from './router.js'
+
+import moment from 'moment'
+Vue.filter('dateFormat', function (dataStr, pattern = 'YYYY-MM-DD HH:mm:ss'){
+  // if(!pattern){
+  //   pattern = 'YYYY-MM-DD HH:mm:ss'
+  // }
+  return moment(dataStr).format(pattern)
+})
+
 
 const vm = new Vue({
   el:'#app',
